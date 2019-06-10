@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
-
     InitLinkEvents();
-
 
     InitBackgroundChanges();
 
@@ -28,7 +26,51 @@ function InitLinkEvents()
     });
 }
 
+var imageCount = 0;
+var imageList;
+var maxImages = 0;
+var interval = 0;
 function InitBackgroundChanges()
 {
+    $.get('../resources/gallery/images.json')
+        .done(function (data) {
+            interval = data["interval"] * 1000;
+            maxImages = data["images"].length - 1;
+            imageList = data["images"];
+            IntervalImages();
+        });
+}
 
+function IntervalImages()
+{
+    if(interval != 0 && maxImages != 0)
+    {
+        setTimeout(function() {
+            imageCount++;
+            if(maxImages < imageCount)
+            {
+                imageCount = 0;
+            }
+
+            LoadImage("resources/gallery/"+imageList[imageCount]).then(function() {
+                IntervalImages();
+            });
+        }, interval);
+    }
+}
+
+function LoadImage(imageToLoad) {
+    return new Promise((resolve, reject) => {
+        $('<img/>').attr('src', imageToLoad)
+        .on('load', function ()
+        {
+            $('body').css('background-image', 'url('+imageToLoad+')');
+            resolve();
+        })
+        .on('error', function (err)
+        {
+            console.log('Failed to get image, error: ' + err);
+            resolve();
+        });
+    });
 }
