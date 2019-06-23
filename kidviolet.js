@@ -4,8 +4,7 @@ $(document).ready(function() {
 
     InitBackgroundChanges();
 
-})
-
+});
 
 function InitLinkEvents()
 {
