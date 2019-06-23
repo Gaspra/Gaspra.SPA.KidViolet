@@ -32,13 +32,13 @@ function Charlify()
 
 function GetCharlieDiv()
 {
-    return '<div id="Charlify" style="transition:0.75s;display:none;height:500vh;width:500vw;position:absolute;z-index:9999;left:-100px;top:-100px;"></div>';
+    return '<div id="Charlify" style="transition:0.75s;display:none;height:5000px;width:5000px;position:absolute;z-index:9999;left:-1500px;top:-1500px;"></div>';
 }
 
 function SetBackground()
 {
     $('#Charlify').css('background-image','url("resources/charlify/mosaicCharlie.png")');
-	//$('#Charlify').css('background-position','center');
+	$('#Charlify').css('background-position','center');
 	//$('#Charlify').css('background-size','initial');
 	$('#Charlify').css('background-repeat', 'repeat');
 }
