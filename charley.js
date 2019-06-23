@@ -32,7 +32,7 @@ function Charlify()
 
 function GetCharlieDiv()
 {
-    return '<div id="Charlify" style="transition:0.5s;display:none;height:150vh;width:150vw;position:absolute;"></div>';
+    return '<div id="Charlify" style="transition:0.75s;display:none;height:500vh;width:500vw;position:absolute;z-index:9999;left:-100px;top:-100px;"></div>';
 }
 
 function SetBackground()
@@ -47,8 +47,8 @@ var angle = 0;
 function YouSpinMeRightRound()
 {
     setTimeout(function() {        
-        angle += 5;
+        angle += 3;
         $('#Charlify').css('transform', 'rotate('+angle+'deg)');
         YouSpinMeRightRound();
-    }, 500);    
+    }, 750);    
 }
