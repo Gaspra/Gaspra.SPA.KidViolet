@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    if(window.location.pathname.endsWith("?charlify"))
+    if(window.location.href.endsWith("?charlify"))
     {
         Charlify();
     }
