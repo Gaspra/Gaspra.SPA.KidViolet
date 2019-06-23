@@ -9,7 +9,7 @@ $(document).ready(function()
 var isCharlified = false;
 function Charlify()
 {
-    if(isCharlified)
+    if(!isCharlified)
     {
         if(document.getElementById('Charlify')==null)
         {
