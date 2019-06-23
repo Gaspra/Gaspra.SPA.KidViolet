@@ -68,7 +68,7 @@ function LoadImage(imageToLoad) {
         $('<img/>').attr('src', imageToLoad)
         .on('load', function ()
         {
-            $('body').css('background-image', 'url('+imageToLoad+')');
+            $('#Background').css('background-image', 'url('+imageToLoad+')');
             resolve();
         })
         .on('error', function (err)
