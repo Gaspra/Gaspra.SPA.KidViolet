@@ -9,6 +9,10 @@ $(document).ready(function() {
 
 function InitLinkEvents()
 {
+    $("#MaintenanceMode").on('click', function() {
+        window.open('https://soundcloud.com/kidviolet', '_blank');
+    });
+
     $("#Soundcloud").on('click', function() {
         window.open('https://soundcloud.com/kidviolet', '_blank');
     });

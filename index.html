@@ -1,4 +1,8 @@
-<body><div id="toLoad">
+<body>
+
+<div id="MaintenanceMode"></div>
+
+<div id="toLoad">
     <script type="text/javascript" src="jquery.js?ver=0.1"></script>
     <script type="text/javascript" src="kidviolet.js?ver=0.1"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -49,6 +53,18 @@
 		vertical-align: middle;
 		padding: 15px;
 		z-index: 999;
+	}
+
+	#MaintenanceMode{
+		position:absolute;
+		z-index:9999;
+		width:100vw;
+		height:100vh;
+		display:block;
+		background-image: url("resources/Maintenance.png");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
     #Background {
