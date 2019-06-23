@@ -46,7 +46,7 @@ function SetBackground()
 var angle = 0;
 function YouSpinMeRightRound()
 {
-    if(isCharlified())
+    if(isCharlified)
     {
         setTimeout(function() {        
             angle += 3;
