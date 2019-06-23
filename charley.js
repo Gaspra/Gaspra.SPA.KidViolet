@@ -9,7 +9,9 @@ $(document).ready(function()
 var isCharlified = false;
 function Charlify()
 {
-    if(!isCharlified)
+    isCharlified = !isCharlified;
+
+    if(isCharlified)
     {
         if(document.getElementById('Charlify')==null)
         {
@@ -26,8 +28,6 @@ function Charlify()
     {
         $('#Charlify').css('display','none');
     }
-
-    isCharlified = !isCharlified;
 }
 
 function GetCharlieDiv()
@@ -46,9 +46,12 @@ function SetBackground()
 var angle = 0;
 function YouSpinMeRightRound()
 {
-    setTimeout(function() {        
-        angle += 3;
-        $('#Charlify').css('transform', 'rotate('+angle+'deg)');
-        YouSpinMeRightRound();
-    }, 750);    
+    if(isCharlified())
+    {
+        setTimeout(function() {        
+            angle += 3;
+            $('#Charlify').css('transform', 'rotate('+angle+'deg)');
+            YouSpinMeRightRound();
+        }, 750);
+    }    
 }
