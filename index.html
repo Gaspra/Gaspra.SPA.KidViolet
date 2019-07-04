@@ -1,19 +1,24 @@
-<body><div id="toLoad">
-    <script type="text/javascript" src="jquery.js?ver=0.1"></script>
-    <script type="text/javascript" src="kidviolet.js?ver=0.1"></script>
+<body>
+
+<div id="MaintenanceMode" style="display:none"></div>
+
+<div id="toLoad">
+    <script type="text/javascript" src="jquery.js?ver=0.2"></script>
+	<script type="text/javascript" src="kidviolet.js?ver=0.2"></script>
+	<script type="text/javascript" src="charley.js?ver=0.3"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 </div>
 
 <style type="text/css">
-    html, body {
+    body {
         margin: 0;
         padding: 0;
         min-height: 100%;
         background-color: #000000;
 	overflow-x: hidden;
     }
-	
+
 	h1 {
 		color: #ffffff;
 		text-align: center;
@@ -24,21 +29,21 @@
 		z-index: 999;
 		position: relative;
 	}
-	
+
 	table {
         width:100%;
         padding-top: 175px;
 		border-collapse: collapse;
 		z-index: 999;
 		position: relative;
-		
+
 	}
 
 	tr {
 		border-bottom: 1px solid #ffffff;
 		z-index: 999;
 	}
-	
+
 	td {
 		color: #ffffff;
 		text-align: center;
@@ -51,13 +56,25 @@
 		z-index: 999;
 	}
 
+	#MaintenanceMode{
+		position:absolute;
+		z-index:9999;
+		width:100vw;
+		height:100vh;
+		background-image: url("resources/Maintenance.png");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
     #Background {
-        background-image: url("resources/Gallery/1.jpg");
+        background-image: url("resources/gallery/1.jpg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         width: 100vw;
         height: 1000px;
+		transition: 4s;
     }
 
     #KVContainer {
@@ -71,7 +88,7 @@
     }
 
     #KV {
-        background-image: url("resources/KV.png");
+        background-image: url("resources/logo/KV.png");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -86,7 +103,7 @@
         width: 230px;
         margin: auto;
         padding-top: 5px;
-        padding-left: 1px;
+        padding-left: 0px;
 		z-index: 1000;
 		position: relative;
     }
@@ -107,11 +124,11 @@
         margin: auto;
         width: 600px;
         height: 100px;
-        padding-left: 66px;
+        padding-left: 50px;
         padding-bottom: 50px;
 		z-index: 999;
     }
-    
+
     #TableContainer {
         margin: auto;
         width: 50%;
@@ -166,124 +183,14 @@
     .MediaLink:hover {
         opacity: 1;
     }
-	
-	.crossfade > figure {
-		animation: imageAnimation 120s linear infinite 0s;
-		backface-visibility: hidden;
-		background-size: cover;
-		background-position: center center;
-		color: transparent;
-		height: 100%;
-		left: -50px;
-		opacity: 0;
-		position: absolute;
-		top: -50px;
-		width: 100vw;
-        height: 1000px;
-		z-index: 0;
-	}
-
-	.crossfade > figure:nth-child(1) { background-image: url("resources/Gallery/1.jpg"); }
-
-	.crossfade > figure:nth-child(2) {
-		animation-delay: 10s;
-		background-image:url("resources/Gallery/2.jpg");
-	}
-	
-	.crossfade > figure:nth-child(3) {
-		animation-delay: 20s;
-		background-image:url("resources/Gallery/3.jpg");
-	}
-	
-	.crossfade > figure:nth-child(4) {
-		animation-delay: 30s;
-		background-image:url("resources/Gallery/4.jpg");
-	}
-	
-	.crossfade > figure:nth-child(5) {
-		animation-delay: 40s;
-		background-image:url("resources/Gallery/5.jpg");
-	}
-	
-	.crossfade > figure:nth-child(6) {
-		animation-delay: 50s;
-		background-image:url("resources/Gallery/6.jpg");
-	}
-	
-	.crossfade > figure:nth-child(7) {
-		animation-delay: 60s;
-		background-image:url("resources/Gallery/7.jpg");
-	}
-	
-	.crossfade > figure:nth-child(8) {
-		animation-delay: 70s;
-		background-image:url("resources/Gallery/8.jpg");
-	}
-	
-	.crossfade > figure:nth-child(9) {
-		animation-delay: 80s;
-		background-image:url("resources/Gallery/9.jpg");
-	}
-	
-	.crossfade > figure:nth-child(10) {
-		animation-delay: 90s;
-		background-image:url("resources/Gallery/10.jpg");
-	}
-	
-	.crossfade > figure:nth-child(11) {
-		animation-delay: 100s;
-		background-image:url("resources/Gallery/11.jpg");
-	}
-	
-	.crossfade > figure:nth-child(12) {
-		animation-delay: 110s;
-		background-image:url("resources/gallery/12.jpg");
-	}
-	
-	@keyframes 
-		imageAnimation {  0% {
-		animation-timing-function: ease-in;
-		opacity: 0;
-	}
-	8% {
-		animation-timing-function: ease-out;
-		opacity: 1;
-	}
-	17% {
-		opacity: 1
-	}
-	25% {
-		opacity: 0
-	}
-	100% {
-		opacity: 0
-	}
-	}
-
 </style>
 
-<title>Kid Violet</title>
+<div id="Background">
+	<title>Kid Violet</title>
 
 	<div id="KVContainer">
         <div id="KV"></div>
     </div>
-
-<div class="crossfade">
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-  <figure></figure>
-</div>
-
-	
 
     <div id="SocialContainer">
         <div id="Soundcloud" class="MediaLink"></div>
@@ -292,38 +199,49 @@
         <div id="Facebook" class="MediaLink"></div>
         <div id="Instagram" class="MediaLink"></div>
     </div>
-    
+
     <div id="KVLiveContainer">
         <div id="KVLive"></div>
     </div>
-    
+
     <div id="TableContainer">
         <table>
 		<tbody>
                 	<tr>
-				<td>
-					Thu 13th June
+                    		<td>
+					Thu 11th July
 				</td>
 				<td>
-					The Water Rats
+					The Monarch
 				</td>
 				<td>
-					London, United Kingdom
+					London, UK
 				</td>
 			</tr>
-                	<tr>
+			<tr>
                     		<td>
-						
+					Wed 17th July
 				</td>
 				<td>
-					More to be announced
+					The Prince Albert
+				</td>
+				<td>
+					Brighton, UK
+				</td>
+			</tr>
+			<tr>
+                    		<td>
+					
+				</td>
+				<td>
+					More To Be Announced
 				</td>
 				<td>
 					
 				</td>
 			</tr>
             	</tbody>
-	</table>
-  </div> 
-
+		</table>
+  	</div>
+</div>
 </body>
