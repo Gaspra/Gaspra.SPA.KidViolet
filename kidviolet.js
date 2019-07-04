@@ -9,11 +9,15 @@ $(document).ready(function() {
 function InitLinkEvents()
 {
     $("#MaintenanceMode").on('click', function() {
-        window.open('https://soundcloud.com/kidviolet', '_blank');
+        window.open('https://open.spotify.com/artist/18Kupu2OZy7drYCfFlIxfz?si=eAQy4VfJRp2TlNtn0ZXuzw', '_blank');
     });
 
     $("#Soundcloud").on('click', function() {
         window.open('https://soundcloud.com/kidviolet', '_blank');
+    });
+	
+    $("#Spotify").on('click', function() {
+        window.open('https://open.spotify.com/artist/18Kupu2OZy7drYCfFlIxfz?si=eAQy4VfJRp2TlNtn0ZXuzw', '_blank');
     });
 
 	$("#Teemill").on('click', function() {
@@ -37,7 +41,7 @@ function InitBackgroundChanges()
 {
     $.get('../resources/gallery/images.json')
         .done(function (data) {
-            interval = data["interval"] * 1000;
+            interval = data["interval"] * 1500;
             maxImages = data["images"].length - 1;
             imageList = data["images"];
             IntervalImages();
