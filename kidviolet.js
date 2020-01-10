@@ -86,7 +86,6 @@ function LoadImage(imageToLoad) {
 function Metric() {
     $.ajax({
         type: "GET",
-        headers: {"Access-Control-Allow-Origin": "http://kidviolet.com"},
         url: "http://gaspra.co.uk:2099/metric"
     });
 }
