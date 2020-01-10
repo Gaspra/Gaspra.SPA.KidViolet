@@ -84,5 +84,9 @@ function LoadImage(imageToLoad) {
 }
 
 function Metric() {
-    $.get( "http://gaspra.co.uk:2099/metric" );
+    $.ajax({
+        type: "GET",
+        headers: {"Access-Control-Allow-Origin": "*"},
+        url: "http://gaspra.co.uk:2099/metric"
+    });
 }
