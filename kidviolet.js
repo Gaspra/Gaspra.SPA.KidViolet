@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     InitBackgroundChanges();
 
+    Metric();
 });
 
 function InitLinkEvents()
@@ -80,4 +81,8 @@ function LoadImage(imageToLoad) {
             resolve();
         });
     });
+}
+
+function Metric() {
+    $.get( "http://gaspra.co.uk:2099/metric" );
 }
